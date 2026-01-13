@@ -1,49 +1,61 @@
-# Rofi-Chem - Chemical Elements & Compounds Rofi Plugin
+# Rofi-Chem: Data Factory
 
-A Rofi mode plugin for quick lookup of periodic table elements and chemical compounds with data from NIST, Mendeleev, and PubChem.
+This branch (`data`) is the **Data Engineering Hub** for Rofi-Chem. It contains the Python pipeline used to fetch, process, and enrich the chemical database from scientific sources like PubChem and Mendeleev.
 
-## Features
+> [!IMPORTANT]
+> This branch is intended for **contributors and data maintainers**. If you just want to use the Rofi plugin, switch to the `main` branch.
 
-- Interactive periodic table lookup integrated with Rofi.
-- Instant access to element properties (atomic number, mass, density, etc.).
-- Chemical compound information (formula, properties, molecular weight).
-- Configurable display fields.
-- Fuzzy search by name, symbol, or formula.
-- Local SQLite cache for fast offline access.
+## Purpose
 
-## Installation
+The "Data Factory" allows us to:
+- Expand the compound list beyond the initial 118 elements.
+- Fetch molecular properties automatically via the PubChem API.
+- Maintain a local SQLite cache to avoid repeated network requests.
+- Generate the final `chemdata.db` that gets embedded into the Go binary on the `main` branch.
 
-### Option 1: Direct Binary (Recommended)
-Download the latest `rofi-chem` binary from the [Releases](https://github.com/fam007e/rofi-chem/releases) page and place it in your `$PATH` (e.g., `~/.local/bin/`).
+## Environment Setup
 
-### Option 2: Build from Source
-```bash
-git clone https://github.com/fam007e/rofi-chem.git
-cd rofi-chem
-go build -o rofi-chem cmd/rofi-chem/main.go
-mv rofi-chem ~/.local/bin/
-```
+### Prerequisites
+- Python 3.10+
+- Go 1.22+ (for final binary verification)
 
-> [!NOTE]
-> No database setup is required. The element data is embedded inside the binary and will be automatically extracted on first run.
+### Installation
+1. Install Python dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. (Optional) Initialize a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate
+   pip install -r requirements.txt
+   ```
 
-## Data Enrichment
-To add more compounds to your database:
-1. Switch to the `data` branch.
-2. Add your chemical names to `data/compounds.txt`.
-3. Run `python scripts/init_database.py`.
-4. Rebuild the Go binary to include the new data.
+## How to Enrich Data
 
-## Usage
+1. **Update Molecule List**: Add common chemical names to [data/compounds.txt](data/compounds.txt).
+2. **Run the Pipeline**:
+   ```bash
+   python scripts/init_database.py
+   ```
+   This script will:
+   - Read the names from `compounds.txt`.
+   - Check if the compound already exists in `data/chemdata.db`.
+   - Fetch missing data from PubChem.
+   - Cache results in `data/cache/`.
+3. **Verify**: Check the file size or contents of `data/chemdata.db`.
 
-```bash
-rofi -modi "chem:rofi-chem" -show chem
-```
+## Syncing with Main
 
-## Configuration
+Once you have enriched the database:
+1. Copy the updated `data/chemdata.db` to the `internal/db/data/` directory.
+2. Commit the database changes.
+3. Switch to the `main` branch.
+4. Merge or manually update the database file in `main`.
+5. Rebuild the Go binary to include the new data:
+   ```bash
+   go build -o rofi-chem cmd/rofi-chem/main.go
+   ```
 
-Configuration is stored in `~/.config/rofi/rofi-chem/config.yaml`.
-
-## License
-
-MIT
+## Contributing
+See [CONTRIBUTING.md](CONTRIBUTING.md) for our branch strategy and coding standards.
