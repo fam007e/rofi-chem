@@ -44,6 +44,13 @@ rofi -modi "chem:rofi-chem" -show chem
 
 Configuration is stored in `~/.config/rofi/rofi-chem/config.yaml`.
 
+## Data Sources
+
+This project aggregates scientific data from the following reputable sources:
+- **[Mendeleev](https://mendeleev.readthedocs.io/)**: For comprehensive periodic table properties.
+- **[PubChem](https://pubchem.ncbi.nlm.nih.gov/)**: For molecular information and chemical compound properties.
+- **[NIST](https://www.nist.gov/)**: For atomic weights and isotopic compositions.
+
 ## License
 
-MIT
+This project is licensed under the [MIT License](LICENSE).
