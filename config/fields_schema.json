@@ -1,0 +1,32 @@
+{
+  "elements": [
+    "symbol",
+    "name",
+    "atomic_number",
+    "atomic_mass",
+    "density",
+    "melting_point",
+    "boiling_point",
+    "electronegativity",
+    "electron_configuration",
+    "oxidation_states",
+    "atomic_radius",
+    "discovery_year",
+    "group_number",
+    "period",
+    "category"
+  ],
+  "compounds": [
+    "name",
+    "formula",
+    "molecular_weight",
+    "density",
+    "melting_point",
+    "boiling_point",
+    "solubility",
+    "appearance",
+    "iupac_name",
+    "cas_number",
+    "pubchem_cid"
+  ]
+}

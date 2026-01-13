@@ -1,0 +1,143 @@
+# Common Inorganic Acids
+Sulfuric acid
+Hydrochloric acid
+Nitric acid
+Phosphoric acid
+Boric acid
+Hydrofluoric acid
+Perchloric acid
+Hydrobromic acid
+
+# Common Bases
+Sodium hydroxide
+Potassium hydroxide
+Calcium hydroxide
+Ammonia
+Magnesium hydroxide
+Lithium hydroxide
+Sodium carbonate
+Sodium bicarbonate
+
+# Salts
+Sodium chloride
+Potassium chloride
+Calcium carbonate
+Magnesium sulfate
+Ammonium nitrate
+Silver nitrate
+Copper(II) sulfate
+Iron(II) sulfate
+Potassium permanganate
+Sodium sulfate
+Potassium nitrate
+Ammonium chloride
+
+# Organic Solvents
+Ethanol
+Methanol
+Isopropyl alcohol
+Acetone
+Ethyl acetate
+Diethyl ether
+Hexane
+Benzene
+Toluene
+Xylene
+Chloroform
+Dichloromethane
+Dimethyl sulfoxide
+Tetrahydrofuran
+Acetonitrile
+
+# Simple Hydrocarbons & Gases
+Methane
+Ethane
+Propane
+Butane
+Ethylene
+Acetylene
+Carbon dioxide
+Carbon monoxide
+Nitrous oxide
+Nitric oxide
+Sulfur dioxide
+Hydrogen sulfide
+
+# Carbohydrates & Sugars
+Glucose
+Fructose
+Galactose
+Sucrose
+Lactose
+Maltose
+Starch
+Cellulose
+
+# Amino Acids
+Glycine
+Alanine
+Valine
+Leucine
+Isoleucine
+Proline
+Phenylalanine
+Tyrosine
+Tryptophan
+Serine
+Threonine
+Cysteine
+Methionine
+Asparagine
+Glutamine
+Aspartic acid
+Glutamic acid
+Lysine
+Arginine
+Histidine
+
+# Vitamins & Nutrients
+Ascorbic acid
+Retinol
+Thiamine
+Riboflavin
+Niacin
+Pantothenic acid
+Pyridoxine
+Biotin
+Folic acid
+Cobalamin
+Calciferol
+Tocopherol
+Phylloquinone
+
+# Common Medicines & Drugs
+Acetylsalicylic acid
+Acetaminophen
+Ibuprofen
+Caffeine
+Nicotine
+Morphine
+Cocaine
+Penicillin G
+Amoxicillin
+Metformin
+Atorvastatin
+Diazepam
+Hydrochlorothiazide
+
+# Industrial & Other
+Urea
+Formaldehyde
+Acetaldehyde
+Phenol
+Aniline
+Nitrobenzene
+Ethylene glycol
+Glycerol
+Stearic acid
+Palmitic acid
+Oleic acid
+Lactic acid
+Trinitrotoluene
+Hydrazine
+Hydrogen peroxide

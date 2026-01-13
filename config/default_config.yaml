@@ -1,0 +1,49 @@
+# Rofi-Chem Configuration
+
+# Display Settings
+display:
+  max_results: 50
+  use_colors: true
+  show_icons: false
+  compact_mode: false
+
+# Element Display Fields
+element_fields:
+  - symbol
+  - name
+  - atomic_number
+  - atomic_mass
+  - density
+  - melting_point
+  - boiling_point
+  - electron_configuration
+
+# Compound Display Fields
+compound_fields:
+  - formula
+  - name
+  - molecular_weight
+  - density
+  - melting_point
+  - boiling_point
+
+# Search Settings
+search:
+  fuzzy_threshold: 0.6
+  enable_fuzzy: true
+  search_compounds: true
+  search_elements: true
+
+# Data Update Settings
+data:
+  auto_update: false
+  update_interval_days: 30
+  last_update: null
+
+# Colors (Pango markup)
+colors:
+  element_name: "#61AFEF"
+  compound_name: "#C678DD"
+  property_label: "#98C379"
+  property_value: "#E5C07B"
+  separator: "#5C6370"
