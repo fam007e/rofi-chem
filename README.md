@@ -57,5 +57,16 @@ Once you have enriched the database:
    go build -o rofi-chem cmd/rofi-chem/main.go
    ```
 
-## Contributing
-See [CONTRIBUTING.md](CONTRIBUTING.md) for our branch strategy and coding standards.
+## Data Architecture & Sources
+
+The enrichment pipeline utilizes specialized scientific libraries to interface with upstream databases:
+
+- **[Mendeleev Python Library](https://github.com/lmmentel/mendeleev)**: Used to pull deep atomic data. We cite the package as a primary source for standardized elemental properties.
+- **[PubChemPy](https://github.com/mcs07/PubChemPy)**: An interface to the **[NIH PubChem Power User Gateway (PUG)](https://pubchem.ncbi.nlm.nih.gov/pug_rest/pug_rest.html)**, which provides molecular weights, IUPAC names, and formulas for compounds.
+- **NIST Standard Reference Data**: Elements are cross-referenced with NIST data where available to ensure scientific accuracy.
+
+All data fetched is stored locally in `data/chemdata.db` (SQLite) to minimize API overhead and ensure project stability.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
