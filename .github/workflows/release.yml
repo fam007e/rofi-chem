@@ -16,11 +16,11 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.22'
+          go-version: '1.25.x'
 
       - name: Build Binary
         run: |
-          go build -v -o rofi-chem cmd/rofi-chem/main.go
+          go build -v -o rofi-chem ./cmd/rofi-chem/main.go
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
