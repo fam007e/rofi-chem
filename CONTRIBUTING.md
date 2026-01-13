@@ -1,40 +1,44 @@
-# Contributing to Rofi-Chem
+# Contributing To Rofi-Chem
 
-Thank you for your interest in contributing to Rofi-Chem! We welcome contributions from everyone.
+Thank you for helping build a better tool for the scientific community. To keep the project maintainable and performant, we use a strictly separated dual-branch architecture.
 
-## Branching Strategy
+## 🏗 Project Architecture
 
-This project uses a dual-branch strategy for clarity and performance:
+| Branch | Purpose | Primary Tech | Target Audience |
+| :--- | :--- | :--- | :--- |
+| **`main`** | Core Rofi Plugin & Distribution | Go | End Users / UI Devs |
+| **`data`** | Data Enrichment Factory | Python / SQLite | Data Scientists / Maintainers |
 
-- **`main`**: The primary branch for users. It contains the Go source code and a pre-built, embedded chemical database. Focus here is on the Rofi interface, performance, and user experience.
-- **`data`**: The enrichment branch. It contains Python scripts and tools used to fetch, process, and enrich the chemical database from scientific sources like PubChem and Mendeleev. Focus here is on data engineering and expansion.
+### Which branch should I use?
+- **Bug in Rofi display or lookup logic?** Use `main`.
+- **Typo in chemical mass or missing compounds?** Use `data`.
+- **Requesting a new feature?** Open an Issue first.
 
-## How to Contribute
+---
 
-### Reporting Bugs
-Please use the [Bug Report](.github/ISSUE_TEMPLATE/bug_report.md) template when opening an issue.
+## 🚀 Development Workflow
 
-### Suggesting Features
-Please use the [Feature Request](.github/ISSUE_TEMPLATE/feature_request.md) template.
+### 1. Code Contributions (`main`)
+The `main` branch is optimized for a zero-dependency user experience.
+- **Requirements**: Go 1.22+
+- **Build**: `go build -o rofi-chem cmd/rofi-chem/main.go`
+- **Embedding**: Any data changes must be merged from `data` and then manually updated in `internal/db/data/chemdata.db` before rebuilding.
 
-### Pull Requests
-1. Fork the repository.
-2. Create a new branch for your feature or fix.
-3. If your change is data-related, target the `data` branch.
-4. If your change is code-related (Go), target the `main` branch.
-5. Ensure your code follows the existing style and is well-documented.
-6. Submit a Pull Request with a clear description of the changes.
+### 2. Data Contributions (`data`)
+The `data` branch contains the Python pipeline for scientific data fetching.
+- **Requirements**: Python 3.10+, `mendeleev`, `pubchempy`
+- **Setup**: `pip install -r requirements.txt`
+- **Workflow**:
+  1. Add compound names to `data/compounds.txt`.
+  2. Run `python scripts/init_database.py` to fetch properties and update the local database.
 
-## Development Setup
+---
 
-### Go (Main Branch)
-- Requires Go 1.22+.
-- `go build -o rofi-chem cmd/rofi-chem/main.go`
+## 🛠 Submission Guidelines
 
-### Python (Data Branch)
-- Requires Python 3.10+.
-- Recommended to use a virtual environment.
-- `pip install -r requirements.txt` (Available on the `data` branch).
+1. **Self-Documentation**: Ensure any UI changes are reflected in the `main` branch README, and any pipeline changes in the `data` branch README.
+2. **Commit Hygiene**: Use descriptive commit messages. GPG signing is preferred but not required for community PRs.
+3. **Draft PRs**: Feel free to open a Draft PR if you want early feedback on a complex data pipeline or UI refactor.
 
-## Code of Conduct
-Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+## ⚖ Code of Conduct
+Respect for scientific accuracy and community members is paramount. See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
