@@ -27,12 +27,12 @@ mv rofi-chem ~/.local/bin/
 > [!NOTE]
 > No database setup is required. The element data is embedded inside the binary and will be automatically extracted on first run.
 
-## Data Enrichment
-To add more compounds to your database:
-1. Switch to the `data` branch.
-2. Add your chemical names to `data/compounds.txt`.
-3. Run `python scripts/init_database.py`.
-4. Rebuild the Go binary to include the new data.
+## Data & Contributions
+
+This branch (`main`) focuses on the Rofi interface and Go core.
+
+- **To add new compounds**: Please switch to the `data` branch, which contains the specialized Python pipeline for data enrichment.
+- **To contribute**: See [CONTRIBUTING.md](CONTRIBUTING.md) for details on our dual-branch strategy.
 
 ## Usage
 
