@@ -26,7 +26,7 @@ The `main` branch is optimized for a zero-dependency user experience.
 
 ### 2. Data Contributions (`data`)
 The `data` branch contains the Python pipeline for scientific data fetching.
-- **Requirements**: Python 3.10+, `mendeleev`, `pubchempy`
+- **Requirements**: Python 3.10+, `mendeleev`, `requests`
 - **Setup**: `pip install -r requirements.txt`
 - **Workflow**:
   1. Add compound names to `data/compounds.txt`.

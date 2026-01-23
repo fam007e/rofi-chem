@@ -8,7 +8,7 @@ This branch (`data`) is the **Data Engineering Hub** for Rofi-Chem. It contains 
 ## Purpose
 
 The "Data Factory" allows us to:
-- Expand the compound list beyond the initial 118 elements.
+- Expand the chemical database beyond the 118 periodic elements by adding common compounds.
 - Fetch molecular properties automatically via the PubChem API.
 - Maintain a local SQLite cache to avoid repeated network requests.
 - Generate the final `chemdata.db` that gets embedded into the Go binary on the `main` branch.
@@ -62,7 +62,7 @@ Once you have enriched the database:
 The enrichment pipeline utilizes specialized scientific libraries to interface with upstream databases:
 
 - **[Mendeleev Python Library](https://github.com/lmmentel/mendeleev)**: Used to pull deep atomic data. We cite the package as a primary source for standardized elemental properties.
-- **[PubChemPy](https://github.com/mcs07/PubChemPy)**: An interface to the **[NIH PubChem Power User Gateway (PUG)](https://pubchem.ncbi.nlm.nih.gov/pug_rest/pug_rest.html)**, which provides molecular weights, IUPAC names, and formulas for compounds.
+- **[PubChem PUG REST](https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest)**: Used to fetch molecular weights, IUPAC names, and formulas for compounds directly from the NIH PubChem database.
 - **NIST Standard Reference Data**: Elements are cross-referenced with NIST data where available to ensure scientific accuracy.
 
 All data fetched is stored locally in `data/chemdata.db` (SQLite) to minimize API overhead and ensure project stability.
