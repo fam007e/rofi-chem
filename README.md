@@ -10,6 +10,7 @@ This branch (`data`) is the **Data Engineering Hub** for Rofi-Chem. It contains 
 The "Data Factory" allows us to:
 - Expand the chemical database beyond the 118 periodic elements by adding common compounds.
 - Fetch molecular properties automatically via the PubChem API.
+- **New**: Retrieves experimental properties like Density, Melting Point, and Boiling Point.
 - Maintain a local SQLite cache to avoid repeated network requests.
 - Generate the final `chemdata.db` that gets embedded into the Go binary on the `main` branch.
 
