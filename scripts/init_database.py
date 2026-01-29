@@ -1,21 +1,26 @@
 import sys
 import os
+import argparse
 
-# Add src to path
-sys.path.append(os.path.join(os.getcwd(), 'src'))
+# Add current directory to path so src is found
+sys.path.append(os.getcwd())
 
-from database import DatabaseManager
-from fetcher import DataFetcher
+from src.database import DatabaseManager
+from src.fetcher import DataFetcher
 import logging
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-def init():
-    db = DatabaseManager()
+def init(db_path=None):
+    if db_path:
+        db = DatabaseManager(db_path=db_path)
+    else:
+        db = DatabaseManager()
+
     fetcher = DataFetcher()
 
-    logger.info("Initializing database...")
+    logger.info(f"Initializing database at {db.db_path}...")
     db.init_database()
 
     logger.info("Fetching and inserting elements...")
@@ -56,4 +61,7 @@ def init():
     logger.info("Database initialization complete.")
 
 if __name__ == "__main__":
-    init()
+    parser = argparse.ArgumentParser(description="Initialize chemical database")
+    parser.add_argument("--db-path", help="Path to the database file")
+    args = parser.parse_args()
+    init(db_path=args.db_path)

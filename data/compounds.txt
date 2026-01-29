@@ -70,8 +70,6 @@ Galactose
 Sucrose
 Lactose
 Maltose
-Starch
-Cellulose
 
 # Amino Acids
 Glycine
@@ -141,3 +139,60 @@ Lactic acid
 Trinitrotoluene
 Hydrazine
 Hydrogen peroxide
+
+# Neurotransmitters & Hormones
+Serotonin
+Dopamine
+Adrenaline
+Melatonin
+Cortisol
+Testosterone
+Insulin
+Oxytocin
+Thyroxine
+
+# Polymers & Plastics
+Nylon 66
+
+# Fragrances & Flavors
+Limonene
+Linalool
+Geraniol
+Vanillin
+Cinnamaldehyde
+Menthol
+Eugenol
+Anethole
+
+# Additional Common Compounds
+Uric acid
+Creatinine
+Cholesterol
+Glycogen
+Glucagon
+Uracil
+Thymine
+Cytosine
+Guanine
+Adenine
+ATP
+NADH
+FADH2
+L-Dopa
+Ephedrine
+Psilocybin
+Mescaline
+LSD
+MDMA
+Ketamine
+Propofol
+Midazolam
+Fentanyl
+Oxycodone
+Codeine
+Hydrocodone
+Hydromorphone
+Methadone
+Buprenorphine
+Naloxone
+Naltrexone
