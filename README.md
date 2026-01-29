@@ -6,10 +6,16 @@ A Rofi mode plugin for quick lookup of periodic table elements and chemical comp
 
 - Interactive periodic table lookup integrated with Rofi.
 - Instant access to element properties (atomic number, mass, density, etc.).
-- Chemical compound information (formula, properties, molecular weight).
+- Chemical compound information (formula, **experimental properties like melting/boiling point**, molecular weight).
 - Configurable display fields.
 - Fuzzy search by name, symbol, or formula.
 - Local SQLite cache for fast offline access.
+
+## 🛡 Security & CI/CD
+This project uses robust automation to ensure quality:
+- **Build Verification**: Automatically tests builds on every push.
+- **CodeQL**: Advanced security scanning for Go vulnerabilities.
+- **Dependabot**: Automated dependency updates.
 
 ## Installation
 
